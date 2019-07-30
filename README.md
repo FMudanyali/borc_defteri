@@ -1,0 +1,1 @@
+# borc_defteri
