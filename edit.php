@@ -61,6 +61,5 @@ if(isset($_POST['ok'])){
     </tr>
     </table>
     </form>
-    <a href="index.php">Geri</a>
 </body>
 </html>
