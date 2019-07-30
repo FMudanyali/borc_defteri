@@ -48,8 +48,8 @@ function listPeople($db){
             .totalBalance($db,$customer).'</a></td>'."</tr>";
             $total_loan = $total_loan + totalBalance($db,$customer);
         }
-        echo "<tr><td><a>Toplam Alınacak: </td><td>".$total_loan." TL</a></td></tr>";
     }
+    echo "<tr><td><a>Toplam Alınacak: </td><td>".$total_loan." TL</a></td></tr>";
     echo "</table>";
 }
 ?>
