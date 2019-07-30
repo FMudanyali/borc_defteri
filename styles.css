@@ -20,7 +20,7 @@ a{
   font-weight:300;
   font-size:2em;
 }
-#myInput {
+#myInput{
   background-color:rgb(55,60,65);
   color:rgb(200,200,200);
   border-radius: 5px;
@@ -38,7 +38,7 @@ a{
   border:0;
   color:rgb(200,200,200);
 }
-#bill {
+#bill,#password,#customer {
   background-color:rgb(55,60,65);
   border-radius: 5px;
   border:0;

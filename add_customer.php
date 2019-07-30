@@ -1,20 +1,36 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="styles.css">
+  <?php include("functions.php")?>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
+  <script>
+        document.onkeydown = function(e){ 
+        if (window.event.keyCode == 27) {
+        history.go(-1);
+        }
+        };;
+  </script>
+</head>
+<body>
 <form action="" method="post">
-<input type="text" name="customer" id="customer" value="">
-<button type="submit" name="ok">Ekle</button>
+<table id="myTable2" style="margin-top:300px;">
+<tr>
+<td width=90%><input type="text" name="customer" id="customer" value=""></td>
+<td width=10%><button type="submit" name="ok" id="someButton">Ekle</button></td>
+</tr>
+</table>
 </form>
 <?php
-    class MyDB extends SQLite3 {
-        function __construct() {
-        $this->open('customers.db');
-        }
-    }
-
-    $db = new MyDB();
-
     if(isset($_POST['ok'])){
-        $value = $_POST['customer'];
-        $db->exec("CREATE TABLE "."[".$value."]"." "." (ID INT PRIMARY KEY AUTOINCREMENT, DATE TEXT NOT NULL, AMOUNT FLOAT NOT NULL)");
+        $turkish = array("Ö","Ü","İ","Ğ","Ç","Ş","ö","ü","ı","ğ","ç","ş");
+        $english = array("O","U","I","G","C","S","o","u","i","g","c","s");
+        $value = strtoupper(str_replace($turkish,$english,$_POST['customer']));
+        $db->exec("CREATE TABLE "."[".$value."]"." "." ('ID' INTEGER PRIMARY KEY AUTOINCREMENT, 'DATE' TEXT NOT NULL, 'AMOUNT' REAL NOT NULL)");
         echo $value." EKLENDI.<br>";
         $db->close();
     }
 ?>
+</body>
+</html>
