@@ -37,7 +37,8 @@ if(isset($_POST['ok'])){
                 echo '</div><div id="content>';
                 showBalance($db,$customer);
                 echo '</div>';
-                echo $customer.$date.$value." TL eklendi.<br>";
+                echo $value." TL eklendi.<br>";
+                echo "INSERT INTO $customer (ID,DATE,AMOUNT) VALUES (NULL,$date,$value)";
                 $db->close();
         } else {
                 ob_end_clean();
