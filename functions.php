@@ -10,7 +10,7 @@
     }
 function showBalance($db,$customer){
     $ret = $db->query("SELECT * FROM '".$customer."' ORDER BY ID DESC");
-    echo '<div style="width:100%;padding-top:65px;">';
+    echo '<div style="width:100%;padding-top:80px;">';
     echo "<table id=myTable>";
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         if ($row['AMOUNT']<0){
@@ -27,7 +27,7 @@ function showBalance($db,$customer){
         echo "</tr>";
     }
     echo "</table>";
-    echo '<div style="width:100%;padding-top:60px;">';
+    echo '<div style="width:100%;padding-top:80px;">';
 }
 function totalBalance($db,$customer){
     $ret = $db->query("SELECT * FROM ". "[".$customer."]");

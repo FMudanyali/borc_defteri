@@ -122,6 +122,7 @@ tr td{
   padding-top:15px;
   bottom:0;
   position:fixed;
+  width:35%;
 }
 #myTable tr.header, #myTable tr:hover {
   background-color: rgb(35,40,45);
