@@ -39,9 +39,7 @@ if(isset($_POST['ok'])){
                 echo '</div><div id="content>';
                 echo '<table id=myTable>';
                 showBalance($db,$customer);
-                echo '</table>';
-                echo '</div>';
-                echo $value." TL eklendi.<br>";
+                echo "</table></div>".$value." TL eklendi.<br>";
                 $db->close();
         } else {
                 ob_end_clean();
@@ -51,9 +49,7 @@ if(isset($_POST['ok'])){
                 echo '</div><div id="content>';
                 echo '<table id=myTable>';
                 showBalance($db,$customer);
-                echo '</table>';
-                echo '</div>';
-                echo $value." kabul edilemez.<br>";
+                echo "</table></div>".$value." kabul edilemez.<br>";
                 $db->close();
         }
 }
