@@ -40,12 +40,15 @@ a{
 }
 @media (max-width:1400px){
   body {
-    font-size:5em;
-    max-width: 100%;
-    margin:0 auto;
+    font-size:4em;
+    width: 100%;
+    margin:auto;
   }
   a{
-    font-size:6em;
+    font-size:5em;
+  }
+  #bill{
+    font-size:4em;
   }
 }
 #title{
