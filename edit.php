@@ -2,8 +2,13 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <?php include("functions.php")?>
-  <script type="text/javascript" src="functions.js">
-  window.addEventListener("keyup", function(e){ if(e.keyCode == 27) history.back(); }, false);
+  <script type="text/javascript" src="functions.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script>
+        $(document).bind("keyup", null, function(event) {
+                if (event.keyCode == 27) {  //handle escape key
+                //method to go back            }
+        });
   </script>
 </head>
 <body>
