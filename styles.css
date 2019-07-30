@@ -80,10 +80,13 @@ a{
     border-radius:0;
     border:0;
   }
-  a{
+  tr td{
+    font-size:0.8em;
+  }
+  tr td a{
     font-size:1.5em;
   }
-  tr td{
+  a{
     font-size:0.5em;
   }
   body{
