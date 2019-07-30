@@ -67,16 +67,16 @@ a{
 @media (max-width:1400px){
   #title{
     height:10%;
-    font-size:2em;
+    font-size:1.5em;
   }
   #content{
-    height:50%;
+    height:65%;
   }
   #myInput{
     border-radius:0;
   }
   #bill{
-    font-size:1em;
+    font-size:1.5em;
     border-radius:0;
   }
   a{
