@@ -65,30 +65,9 @@ a{
   padding: 12px;
 }
 @media (max-width:1400px){
-  #title{
-    height:10%;
-    font-size:0.5em;
-  }
-  #content{
-    height:65%;
-  }
-  #bill{
-    font-size:0.5em;
-  }
-  #someButton{
-    height:1em;
-    font-size:0.5em;
-  }
-  html{
-    font-size:2em;
-  }
   body{
-    font-size:2em;
     width: 100%;
     margin:auto;
-  }
-  tr td{
-    font-size:2em;
   }
 }
 #container{
