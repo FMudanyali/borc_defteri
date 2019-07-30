@@ -37,7 +37,7 @@ if(isset($_POST['ok'])){
                 echo '</div><div id="content>';
                 showBalance($db,$customer);
                 echo '</div>';
-                echo $value." TL eklendi.<br>";
+                echo $customer.$date.$value." TL eklendi.<br>";
                 $db->close();
         } else {
                 ob_end_clean();
