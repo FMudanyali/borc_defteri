@@ -49,7 +49,7 @@ function listPeople($db){
             $total_loan = $total_loan + totalBalance($db,$customer);
         }
     }
-    echo "<tr><td><a><div id=diva>Toplam Alınacak: </div></a></td><td>".$total_loan." TL</td></tr>";
+    echo "<tr><td><a><div id=diva>TOPLAM ALINACAK: </div></a></td><td style=text-align:right;>".$total_loan." TL</td></tr>";
     echo "</table>";
 }
 ?>
