@@ -2,7 +2,9 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <?php include("functions.php")?>
-  <script type="text/javascript" src="functions.js"></script>
+  <script type="text/javascript" src="functions.js">
+  window.addEventListener("keyup", function(e){ if(e.keyCode == 27) history.back(); }, false);
+  </script>
 </head>
 <body>
 <?php
