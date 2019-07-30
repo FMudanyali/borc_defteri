@@ -48,6 +48,7 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." kabul edilemez.<br>";
+                unset( $_POST );
                 $db->close();
         }
 }
