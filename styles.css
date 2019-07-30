@@ -65,7 +65,21 @@ a{
   padding: 12px;
 }
 @media (max-width:1400px){
+  #title{
+    height:15%;
+    font-size:0.5em;
+  }
+  #content{
+    height:50%;
+  }
+  #bill{
+    font-size:0.5em;
+  }
+  a{
+    font-size:0.5em;
+  }
   body{
+    font-size:0.5em;
     width: 100%;
     margin:auto;
   }
