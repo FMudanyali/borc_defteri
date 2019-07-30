@@ -73,10 +73,11 @@ a{
     height:65%;
   }
   #bill{
-    font-size:3em;
+    font-size:2em;
   }
   #someButton{
-    font-size:2em;
+    height:3em;
+    font-size:1.5em;
   }
   html{
     font-size:2em;
