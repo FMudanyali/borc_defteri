@@ -18,6 +18,7 @@
 ?>
 <form action="" method="post" autocomplete="off">
 <table id="myTable2" style="margin-top:300px;">
+<tr><td><a><div id=diva>Şifre Gir</div></a></td></tr>
 <tr>
 <td width=90%><input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="password" name="password" id="password" value=""></td>
 <td width=10%><button type="submit" name="ok" id="someButton">Gir</button></td>

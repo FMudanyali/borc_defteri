@@ -16,7 +16,7 @@
 <body>
 <form action="" method="post">
 <table id="myTable2" style="margin-top:300px;">
-<tr><a>Müşteri Ekle</a></tr>
+<tr><td><a><div id=diva>Müşteri Ekle</div></a></td></tr>
 <tr>
 <td width=90%><input type="text" name="customer" id="customer" value=""></td>
 <td width=10%><button type="submit" name="ok" id="someButton">Ekle</button></td>
