@@ -11,6 +11,13 @@ html {
     margin:0 auto;
   }
 }
+#title{
+  height:10%;
+}
+#content{
+  height:80%;
+  overflow:scroll;
+}
 a{
     text-decoration: none;
     color:rgb(220,150,100);

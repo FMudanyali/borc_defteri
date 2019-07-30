@@ -16,8 +16,11 @@
 <?php
 $customer = $_GET['value'];
 ob_start();
+echo '<div id="title">';
 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+echo '</div><div id="content">';
 showBalance($db,$customer);
+echo '</div>';
 date_default_timezone_set('Europe/Istanbul');
 $date = date('d-m-Y H:i');
 ?>
@@ -28,15 +31,21 @@ if(isset($_POST['ok'])){
                 $db->exec("INSERT INTO "."[".$customer."] "."(ID,DATE,AMOUNT) VALUES (NULL,'$date',$value)");
                 ob_end_clean();
                 ob_start();
+                echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+                echo '</div><div id="content>';
                 showBalance($db,$customer);
+                echo '</div>';
                 echo $value." TL eklendi.<br>";
                 $db->close();
         } else {
                 ob_end_clean();
                 ob_start();
+                echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+                echo '</div><div id="content>';
                 showBalance($db,$customer);
+                echo '</div>';
                 echo $value." kabul edilemez.<br>";
         }
 }
