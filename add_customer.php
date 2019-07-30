@@ -8,7 +8,7 @@
   <script>
         document.onkeydown = function(e){ 
         if (window.event.keyCode == 27) {
-        history.go(-1);
+            window.location.replace("whattodo.php");
         }
         };;
   </script>
@@ -30,7 +30,6 @@
         $value = strtoupper(str_replace($turkish,$english,$_POST['customer']));
         $db->exec("CREATE TABLE "."[".$value."]"." "." ('ID' INTEGER PRIMARY KEY AUTOINCREMENT, 'DATE' TEXT NOT NULL, 'AMOUNT' REAL NOT NULL)");
         echo $value." EKLENDI.<br>";
-        unset( $_POST );
         $db->close();
     }
 ?>

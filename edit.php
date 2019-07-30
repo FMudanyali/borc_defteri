@@ -8,7 +8,7 @@
   <script>
         document.onkeydown = function(e){ 
         if (window.event.keyCode == 27) {
-        history.go(-1);
+                window.location.replace("customers.php");
         }
         };;
   </script>
@@ -38,7 +38,6 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." TL eklendi.<br>";
-                unset( $_POST );
                 $db->close();
         } else {
                 ob_end_clean();
@@ -49,7 +48,6 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." kabul edilemez.<br>";
-                unset( $_POST );
                 $db->close();
         }
 }
