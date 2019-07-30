@@ -12,11 +12,16 @@ html {
   }
 }
 #title{
-  height:10%;
+  height:5%;
 }
 #content{
   height:80%;
-  overflow:scroll;
+  overflow-y:scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+#content::-webkit-scrollbar {
+  display:none;
 }
 a{
     text-decoration: none;
