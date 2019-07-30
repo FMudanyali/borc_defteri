@@ -7,6 +7,10 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+body {
+  width: 35%;
+  margin:0 auto;
+}
 html::-webkit-scrollbar {
   display:none;
 }
@@ -34,11 +38,11 @@ a{
   border:0;
   color:rgb(200,200,200);
 }
-@media (min-width:1400px){
+@media (max-width:1400px){
   body {
-    width: 35%;
-    margin:0 auto;
     font-size:5em;
+    max-width: 100%;
+    margin:0 auto;
   }
   a{
     font-size:6em;
