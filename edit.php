@@ -5,10 +5,11 @@
   <script type="text/javascript" src="functions.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
   <script>
-        $(document).bind("keyup", null, function(event) {
-                if (event.keyCode == 27) {  //handle escape key
-                //method to go back            }
-        });
+        document.onkeydown = function(e){ 
+        if (window.event.keyCode == 27) {
+        history.go(-1);
+        }
+        };;
   </script>
 </head>
 <body>
