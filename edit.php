@@ -38,7 +38,7 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." TL eklendi.<br>";
-                echo "INSERT INTO $customer (ID,DATE,AMOUNT) VALUES (NULL,$date,$value)";
+                unset( $_POST );
                 $db->close();
         } else {
                 ob_end_clean();
@@ -49,6 +49,7 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." kabul edilemez.<br>";
+                unset( $_POST );
                 $db->close();
         }
 }
