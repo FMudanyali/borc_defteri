@@ -48,7 +48,10 @@ a{
   font-size: 30px;
 }
 #title{
+  width:35%;
   height:8%;
+  position:fixed;
+  background-color:rgb(25,30,35);
 }
 #content{
   height:75%;
@@ -106,9 +109,19 @@ a{
   border-collapse: collapse;
   width: 100%;
 }
-  #myTable th, #myTable td {
+tr td{
   text-align: left;
   font-size:1.5em;
+}
+#lmao {
+  text-align: left;
+  font-size: 1.1em;
+}
+#bottom {
+  background-color:rgb(25,30,35);
+  padding-top:15px;
+  bottom:0;
+  position:fixed;
 }
 #myTable tr.header, #myTable tr:hover {
   background-color: rgb(35,40,45);

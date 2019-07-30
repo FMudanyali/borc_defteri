@@ -19,11 +19,8 @@ $customer = $_GET['value'];
 ob_start();
 echo '<div id="title">';
 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
-echo '</div><div id="content">';
-echo '<table id=myTable>';
-showBalance($db,$customer);
-echo '</table>';
 echo '</div>';
+showBalance($db,$customer);
 date_default_timezone_set('Europe/Istanbul');
 $date = date('d-m-Y H:i');
 ?>
@@ -36,25 +33,24 @@ if(isset($_POST['ok'])){
                 ob_start();
                 echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
-                echo '</div><div id="content>';
-                echo '<table id=myTable>';
+                echo '</div>';
                 showBalance($db,$customer);
-                echo "</table></div>".$value." TL eklendi.<br>";
+                echo $value." TL eklendi.<br>";
                 $db->close();
         } else {
                 ob_end_clean();
                 ob_start();
                 echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
-                echo '</div><div id="content>';
-                echo '<table id=myTable>';
+                echo "</div>";
                 showBalance($db,$customer);
-                echo "</table></div>".$value." kabul edilemez.<br>";
+                echo $value." kabul edilemez.<br>";
                 $db->close();
         }
 }
 ?>
 <br>
+    <div id="bottom">
     <form action="" method="post" autocomplete="off">
     <table id="myTable2">
     <tr>  
@@ -63,5 +59,6 @@ if(isset($_POST['ok'])){
     </tr>
     </table>
     </form>
+    </div>
 </body>
 </html>

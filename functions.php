@@ -9,21 +9,25 @@
         echo $db->lastErrorMsg();
     }
 function showBalance($db,$customer){
-    $ret = $db->query("SELECT * FROM '".$customer."'");
+    $ret = $db->query("SELECT * FROM '".$customer."' ORDER BY ID DESC");
+    echo '<div style="width:100%;padding-top:65px;">';
+    echo "<table id=myTable>";
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         if ($row['AMOUNT']<0){
-            echo '<tr style="background-color:rgb(25,60,35);">'
-            .'<td style="text-align:left;">'.$row['ID'] ."</td>"
-            .'<td style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td style="text-align:right;">'.$row['AMOUNT'] ." TL</td>";
+            echo '<tr id=lmao style="background-color:rgb(25,60,35);">'
+            .'<td id=lmao style="text-align:left;">'.$row['ID'] ."</td>"
+            .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
+            .'<td id=lmao  style="text-align:right;">'.$row['AMOUNT'] ." TL</td>";
         } else {
-            echo '<tr style="background-color:rgb(60,30,35);">'
-            .'<td style="text-align:left;">'.$row['ID'] ."</td>"
-            .'<td style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td style="text-align:right;">'.$row['AMOUNT'] ." TL</td>";
+            echo '<tr id=lmao style="background-color:rgb(60,30,35);">'
+            .'<td id=lmao  style="text-align:left;">'.$row['ID'] ."</td>"
+            .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
+            .'<td id=lmao  style="text-align:right;">'.$row['AMOUNT'] ." TL</td>";
         }
         echo "</tr>";
     }
+    echo "</table>";
+    echo '<div style="width:100%;padding-top:60px;">';
 }
 function totalBalance($db,$customer){
     $ret = $db->query("SELECT * FROM ". "[".$customer."]");
