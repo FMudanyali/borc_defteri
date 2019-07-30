@@ -10,7 +10,7 @@
     }
 function showBalance($db,$customer){
     echo '<table id="myTable">';
-    echo "SELECT * FROM '".$customer."'";
+    echo "";
     $ret = $db->query("SELECT * FROM '".$customer."'");
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         if ($row['AMOUNT']<0){
