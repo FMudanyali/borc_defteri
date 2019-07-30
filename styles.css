@@ -83,6 +83,9 @@ a{
   a{
     font-size:1.5em;
   }
+  tr td{
+    font-size:0.5em;
+  }
   body{
     font-size:0.5em;
     width: 100%;
