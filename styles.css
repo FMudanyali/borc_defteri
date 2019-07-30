@@ -78,9 +78,10 @@ a{
   #bill{
     font-size:1.5em;
     border-radius:0;
+    border:0;
   }
   a{
-    font-size:2em;
+    font-size:1.5em;
   }
   body{
     font-size:0.5em;
