@@ -8,7 +8,7 @@
   <script>
         document.onkeydown = function(e){ 
         if (window.event.keyCode == 27) {
-            window.location.replace("whattodo.php");
+            window.location.href("whattodo.php");
         }
         };;
   </script>
