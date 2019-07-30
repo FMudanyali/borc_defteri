@@ -4,7 +4,7 @@
   <?php include("functions.php")?>
   <script type="text/javascript" src="functions.js"></script>
 </head>
-<div style="top:0;">
+<body>
 <?php
 $customer = $_GET['value'];
 ob_start();
@@ -33,7 +33,6 @@ if(isset($_POST['ok'])){
         }
 }
 ?>
-</div>
 <br>
     <form action="" method="post" autocomplete="off">
     <table id="myTable2">
@@ -44,4 +43,5 @@ if(isset($_POST['ok'])){
     </table>
     </form>
     <a href="index.php">Geri</a>
+</body>
 </html>
