@@ -15,14 +15,22 @@ $date = date('d-m-Y H:i');
 ?>
 <?php
 if(isset($_POST['ok'])){
-        $value = $_POST['bill'];
-        $db->exec("INSERT INTO "."[".$customer."] "."(ID,DATE,AMOUNT) VALUES (NULL,'$date',$value)");
-        ob_end_clean();
-        ob_start();
-	echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
-        showBalance($db,$customer);
-        echo $value." EKLENDI.<br>";
-        $db->close();
+        $value = str_replace(',','.', $_POST['bill']);
+        if (is_numeric($value) and $value!=0){
+                $db->exec("INSERT INTO "."[".$customer."] "."(ID,DATE,AMOUNT) VALUES (NULL,'$date',$value)");
+                ob_end_clean();
+                ob_start();
+                echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+                showBalance($db,$customer);
+                echo $value." TL eklendi.<br>";
+                $db->close();
+        } else {
+                ob_end_clean();
+                ob_start();
+                echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+                showBalance($db,$customer);
+                echo $value." kabul edilemez.<br>";
+        }
 }
 ?>
 </div>
