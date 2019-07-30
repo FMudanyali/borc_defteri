@@ -51,19 +51,13 @@ a{
   html{
     font-size:4em;
   }
-  body {
+  body{
     font-size:4em;
     width: 100%;
     margin:auto;
   }
   a{
     font-size:5em;
-  }
-  #myInput{
-    font-size:4em;
-  }
-  #bill{
-    font-size:4em;
   }
 }
 #title{
