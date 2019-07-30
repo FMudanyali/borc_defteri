@@ -37,6 +37,7 @@ function totalBalance($db,$customer){
 }
 function listPeople($db){
     echo '<table id="myTable">';
+    $total_loan = 0;
     $tablesquery = $db->query("SELECT name FROM sqlite_master WHERE type='table';");
     while ($table = $tablesquery->fetchArray(SQLITE3_ASSOC)) {
         if ($table['name']!="sqlite_sequence") {
@@ -45,7 +46,9 @@ function listPeople($db){
             .'<td><a href="edit.php?value='."$customer"
             .'"><div id="diva">'.$customer.'</div></td><td style="text-align:right;">'
             .totalBalance($db,$customer).'</a></td>'."</tr>";
+            $total_loan = $total_loan + totalBalance($db,$customer);
         }
+        echo "<tr><td><a>Toplam Alınacak: </td><td>".$total_loan." TL</a></td></tr>";
     }
     echo "</table>";
 }
