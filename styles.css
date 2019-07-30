@@ -49,15 +49,18 @@ a{
 }
 @media (max-width:1400px){
   html{
-    font-size:4em;
+    font-size:2em;
   }
   body{
-    font-size:4em;
+    font-size:2em;
     width: 100%;
     margin:auto;
   }
   a{
-    font-size:5em;
+    font-size:3em;
+  }
+  tr td{
+    font-size:2em;
   }
 }
 #title{
