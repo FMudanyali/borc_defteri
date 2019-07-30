@@ -6,11 +6,11 @@
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="functions.js"></script>
   <script>
-        document.onkeydown = function(e){ 
-        if (window.event.keyCode == 27) {
+        jQuery(document).on('keyup',function(evt) {
+          if (evt.keyCode == 27) {
             window.location.assign("whattodo.php");
-        }
-        };;
+          }
+        });
   </script>
 </head>
 <body>

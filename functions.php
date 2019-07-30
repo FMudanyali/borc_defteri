@@ -9,8 +9,6 @@
         echo $db->lastErrorMsg();
     }
 function showBalance($db,$customer){
-    echo '<table id="myTable">';
-    echo "";
     $ret = $db->query("SELECT * FROM '".$customer."'");
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         if ($row['AMOUNT']<0){
@@ -26,7 +24,6 @@ function showBalance($db,$customer){
         }
         echo "</tr>";
     }
-    echo "</table>";
 }
 function totalBalance($db,$customer){
     $ret = $db->query("SELECT * FROM ". "[".$customer."]");

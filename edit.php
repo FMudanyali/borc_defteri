@@ -6,11 +6,11 @@
   <script type="text/javascript" src="functions.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
   <script>
-        document.onkeydown = function(e){ 
-        if (window.event.keyCode == 27) {
-                window.location.assign("customers.php");
-        }
-        };;
+        jQuery(document).on('keyup',function(evt) {
+          if (evt.keyCode == 27) {
+            window.location.assign("customers.php");
+          }
+        });
   </script>
 </head>
 <body>
@@ -20,7 +20,9 @@ ob_start();
 echo '<div id="title">';
 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
 echo '</div><div id="content">';
+echo '<table id=myTable>';
 showBalance($db,$customer);
+echo '</table>';
 echo '</div>';
 date_default_timezone_set('Europe/Istanbul');
 $date = date('d-m-Y H:i');
@@ -35,7 +37,9 @@ if(isset($_POST['ok'])){
                 echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
                 echo '</div><div id="content>';
+                echo '<table id=myTable>';
                 showBalance($db,$customer);
+                echo '</table>';
                 echo '</div>';
                 echo $value." TL eklendi.<br>";
                 $db->close();
@@ -45,7 +49,9 @@ if(isset($_POST['ok'])){
                 echo '<div id="title">';
                 echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
                 echo '</div><div id="content>';
+                echo '<table id=myTable>';
                 showBalance($db,$customer);
+                echo '</table>';
                 echo '</div>';
                 echo $value." kabul edilemez.<br>";
                 $db->close();
