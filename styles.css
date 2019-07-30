@@ -66,11 +66,17 @@ a{
 }
 @media (max-width:1400px){
   #title{
-    height:15%;
+    height:10%;
     font-size:0.5em;
   }
   #content{
-    height:60%;
+    height:65%;
+  }
+  #bill{
+    font-size:1em;
+  }
+  #someButton{
+    font-size:0.75em;
   }
   html{
     font-size:2em;
