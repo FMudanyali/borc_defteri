@@ -29,7 +29,7 @@ $date = date('d-m-Y H:i');
 if(isset($_POST['ok'])){
         $value = str_replace(',','.', $_POST['bill']);
         if (is_numeric($value) and $value!=0){
-                $db->exec("INSERT INTO "."[".$customer."] "."(ID,DATE,AMOUNT) VALUES (NULL,'$date',$value)");
+                $db->exec('INSERT INTO ['.$customer.'] (ID,DATE,AMOUNT) VALUES (NULL,'.$date.','.$value.')');
                 ob_end_clean();
                 ob_start();
                 echo '<div id="title">';
@@ -48,7 +48,6 @@ if(isset($_POST['ok'])){
                 showBalance($db,$customer);
                 echo '</div>';
                 echo $value." kabul edilemez.<br>";
-                unset( $_POST );
                 $db->close();
         }
 }
