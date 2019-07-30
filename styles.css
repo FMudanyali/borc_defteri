@@ -15,7 +15,7 @@ html {
   height:5%;
 }
 #content{
-  height:80%;
+  height:75%;
   overflow-y:scroll;
   -ms-overflow-style: none;
   scrollbar-width: none; 
