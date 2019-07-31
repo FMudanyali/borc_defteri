@@ -47,12 +47,13 @@ function listPeople($db){
             $customerBalance = totalBalance($db,$customer);
             echo "<tr>"
             .'<td><a href="edit.php?value='."$customer"
-            .'"><div id="diva">'.$customer.'</div></td><td style="text-align:right;">'
-            .$customerBalance.'</a></td>'."</tr>";
+            .'"><div id="diva">'.$customer.'</div></a></td><td style="text-align:right;">'
+            .$customerBalance.'</td>'."</tr>";
             $total_loan = $total_loan + $customerBalance;
         }
     }
     echo "<tr><td><a><div id=diva>TOPLAM ALINACAK: </div></a></td><td style=text-align:right;>".$total_loan." TL</td></tr>";
     echo "</table>";
+    echo "<script>sortTable()</script>";
 }
 ?>
