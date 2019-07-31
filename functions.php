@@ -52,7 +52,7 @@ function listPeople($db){
             $total_loan = $total_loan + $customerBalance;
         }
     }
-    echo "<tr><td><a><div id=diva>TOPLAM ALINACAK: </div></a></td><td style=text-align:right;>".$total_loan." TL</td></tr>";
+    echo "<tr><td style=background-color:rgb(35,40,45);><a style=font-weight:600;><div id=diva>TOPLAM ALACAK: </div></a></td><td style=text-align:right;background-color:rgb(35,40,45);>".$total_loan." TL</td></tr>";
     echo "</table>";
     echo "<script>sortTable()</script>";
 }
