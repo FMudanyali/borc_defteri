@@ -8,11 +8,14 @@
     if(!$db) {
         echo $db->lastErrorMsg();
     }
+
 function showBalance($db,$customer){
     $ret = $db->query("SELECT * FROM '".$customer."' ORDER BY ID DESC");
-    echo '<div style="width:100%;padding-top:80px;">';
+    // Top padding so elements dont get under customer name.
+    echo '<div style="width:100%;padding-top:80px;"></div>';
     echo "<table id=myTable>";
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
+        //Red background if positive, otherwise green.
         if ($row['AMOUNT']<0){
             echo '<tr id=lmao style="background-color:rgb(25,60,35);">'
             .'<td id=lmao style="text-align:left;">'.$row['ID'] ."</td>"
@@ -27,7 +30,8 @@ function showBalance($db,$customer){
         echo "</tr>";
     }
     echo "</table>";
-    echo '<div style="width:100%;padding-top:80px;">';
+    // Bottom padding so elements dont get under input bar.
+    echo '<div style="width:100%;padding-top:80px;"></div>';
 }
 function totalBalance($db,$customer){
     $ret = $db->query("SELECT * FROM ". "[".$customer."]");
@@ -35,14 +39,17 @@ function totalBalance($db,$customer){
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         $total = $total + $row['AMOUNT'];
     }
+    // Round the result for readability.
     return round($total,2)." TL";
 }
 function listPeople($db){
     echo '<table id="myTable">';
+    // To calculate total amount of loan.
     $total_loan = 0;
     $tablesquery = $db->query("SELECT name FROM sqlite_master WHERE type='table';");
     while ($table = $tablesquery->fetchArray(SQLITE3_ASSOC)) {
-        if ($table['name']!="sqlite_sequence" and $table['name']!="MARKET") {
+        // Ignore this table
+        if ($table['name']!="sqlite_sequence") {
             $customer = $table['name'];
             $customerBalance = totalBalance($db,$customer);
             echo "<tr>"
@@ -52,8 +59,10 @@ function listPeople($db){
             $total_loan = $total_loan + $customerBalance;
         }
     }
-    echo "<tr><td style=background-color:rgb(35,40,45);><a style=font-weight:600;><div id=diva>TOPLAM ALACAK: </div></a></td><td style=text-align:right;background-color:rgb(35,40,45);>".$total_loan." TL</td></tr>";
-    echo "</table>";
-    echo "<script>sortTable()</script>";
+    echo "<tr><td style=background-color:rgb(35,40,45);><a style=font-weight:600;>
+    <div id=diva>TOPLAM ALACAK: </div></a></td>
+    <td style=text-align:right;background-color:rgb(35,40,45);>"
+    .$total_loan." TL</td></tr>"
+    ."</table><script>sortTable()</script>";
 }
 ?>
