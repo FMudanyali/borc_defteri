@@ -15,7 +15,7 @@
 </head>
 <body>
 <input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" id="myInput" onkeyup="searchNames()" placeholder="Ara..">
-<?php  
+<?php
 listPeople($db);
 ?>
 </body>
