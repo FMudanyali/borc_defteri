@@ -19,7 +19,7 @@
 <tr><td><a><div id=diva>Müşteri Sil</div></a></td></tr>
 <tr>
 <td width=90%><input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" name="customer" id="customer" value=""></td>
-<td width=10%><button type="submit" name="ok" id="someButton" onclick="return ask()">Sil</button></td>
+<td width=10%><button type="submit" name="ok" id="someButton" onclick="ask()">Sil</button></td>
 </tr>
 </table>
 </form>

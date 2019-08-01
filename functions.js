@@ -30,7 +30,8 @@ $(document).ready(function() {
 
 function ask() {
   var customer = document.getElementById("customer").value;
-  return confirm(+ customer + ' KİŞİSİNİ SİLMEK İSTEDİĞİNDEN EMİN MİSİN?');
+  return alert(customer);
+  //return confirm(customer + ' KİŞİSİNİ SİLMEK İSTEDİĞİNDEN EMİN MİSİN?');
 }
 
 function searchNames() {
