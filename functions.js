@@ -69,8 +69,8 @@ function sortTable() {
       x = rows[i].getElementsByTagName("TD")[1];
       y = rows[i + 1].getElementsByTagName("TD")[1];
       // Check if the two rows should switch place:
-      val1 = Number(x.innerHTML.replace(' TL',''));
-      val2 = Number(y.innerHTML.replace(' TL',''));
+      val1 = Number(x.innerHTML.replace(' TL','').replace(',',''));
+      val2 = Number(y.innerHTML.replace(' TL','').replace(',',''));
       if (val1 < val2) {
         shouldSwitch = true;
         break;
