@@ -9,6 +9,7 @@
 <table width=100% style="text-align:center;margin-top:300px;">
 <tr><td><a href=customers.php><div id=diva>Hesap Görüntüle</div></a></td></tr>
 <tr><td><a href=add_customer.php><div id=diva>Müşteri Ekle</div></a></td></tr>
+<tr><td><a href=remove_customer.php><div id=diva>Müşteri Sil</div></a></td></tr>
 </table>
 </body>
 </html>
