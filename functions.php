@@ -55,7 +55,7 @@ function listPeople($db){
             echo "<tr>"
             .'<td><a href="edit.php?value='."$customer"
             .'"><div id="diva">'.$customer.'</div></a></td><td style="text-align:right;">'
-            .number_format($customerBalance,2).'</td>'."</tr>";
+            .number_format($customerBalance,2).' TL</td>'."</tr>";
             $total_loan = $total_loan + $customerBalance;
         }
     }
