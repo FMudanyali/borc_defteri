@@ -29,8 +29,8 @@ $(document).ready(function() {
 });
 
 function ask() {
-  $customer = document.getElementById("customer").value;
-  return confirm(+ $customer + ' KİŞİSİNİ SİLMEK İSTEDİĞİNDEN EMİN MİSİN?');
+  var customer = document.getElementById("customer").value;
+  return confirm(+ customer + ' KİŞİSİNİ SİLMEK İSTEDİĞİNDEN EMİN MİSİN?');
 }
 
 function searchNames() {
