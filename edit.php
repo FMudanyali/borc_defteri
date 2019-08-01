@@ -18,7 +18,7 @@
 $customer = $_GET['value'];
 ob_start();
 echo '<div id="title">';
-echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
 echo '</div>';
 showBalance($db,$customer);
 date_default_timezone_set('Europe/Istanbul');
@@ -41,7 +41,7 @@ if(isset($_POST['ok'])){
                 ob_end_clean();
                 ob_start();
                 echo '<div id="title">';
-                echo "<h1>".$customer." : ".totalBalance($db,$customer)."</h1>";
+                echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
                 echo "</div>";
                 showBalance($db,$customer);
                 echo $value." kabul edilemez.<br>";
