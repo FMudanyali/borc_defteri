@@ -8,7 +8,7 @@
   <script>
         jQuery(document).on('keyup',function(evt) {
           if (evt.keyCode == 27) {
-            window.location.assign("whattodo.php");
+            window.location.assign("index.php");
           }
         });
   </script>
