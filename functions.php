@@ -40,7 +40,7 @@ function totalBalance($db,$customer){
         $total = $total + $row['AMOUNT'];
     }
     // Round the result for readability.
-    return number_format($total,2)." TL";
+    return $total;
 }
 function listPeople($db){
     echo '<table id="myTable">';
