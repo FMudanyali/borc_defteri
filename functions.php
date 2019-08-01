@@ -20,12 +20,12 @@ function showBalance($db,$customer){
             echo '<tr id=lmao style="background-color:rgb(25,60,35);">'
             .'<td id=lmao style="text-align:left;">'.$row['ID'] ."</td>"
             .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'])." TL</td>";
+            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'],2)." TL</td>";
         } else {
             echo '<tr id=lmao style="background-color:rgb(60,30,35);">'
             .'<td id=lmao  style="text-align:left;">'.$row['ID'] ."</td>"
             .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'])." TL</td>";
+            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'],2)." TL</td>";
         }
         echo "</tr>";
     }
@@ -40,7 +40,7 @@ function totalBalance($db,$customer){
         $total = $total + $row['AMOUNT'];
     }
     // Round the result for readability.
-    return number_format($total)." TL";
+    return number_format($total,2)." TL";
 }
 function listPeople($db){
     echo '<table id="myTable">';
@@ -55,7 +55,7 @@ function listPeople($db){
             echo "<tr>"
             .'<td><a href="edit.php?value='."$customer"
             .'"><div id="diva">'.$customer.'</div></a></td><td style="text-align:right;">'
-            .number_format($customerBalance).'</td>'."</tr>";
+            .number_format($customerBalance,2).'</td>'."</tr>";
             $total_loan = $total_loan + $customerBalance;
         }
     }
@@ -64,7 +64,7 @@ function listPeople($db){
     echo "<tr><td style=background-color:rgb(35,40,45);><a style=font-weight:600;>
     <div id=diva>TOPLAM ALACAK: </div></a></td>
     <td style=text-align:right;background-color:rgb(35,40,45);>"
-    .number_format($total_loan)." TL</td></tr>";
+    .number_format($total_loan,2)." TL</td></tr>";
     echo "</table>";
     
 }
