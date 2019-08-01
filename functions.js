@@ -72,6 +72,7 @@ function sortTable() {
       val1 = Number(x.innerHTML.replace(' TL','').replace(',',''));
       val2 = Number(y.innerHTML.replace(' TL','').replace(',',''));
       if (val1 < val2) {
+        alert($val1);
         shouldSwitch = true;
         break;
       }
