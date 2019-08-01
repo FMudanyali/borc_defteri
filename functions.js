@@ -71,8 +71,7 @@ function sortTable() {
       // Check if the two rows should switch place:
       val1 = Number(x.innerHTML.replace(' TL','').replace(',',''));
       val2 = Number(y.innerHTML.replace(' TL','').replace(',',''));
-      if (val1 < val2) {
-        alert($val1);
+      if (val1 > val2) {
         shouldSwitch = true;
         break;
       }
