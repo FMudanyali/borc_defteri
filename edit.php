@@ -11,6 +11,12 @@
             window.location.assign("customers.php");
           }
         });
+        jQuery(document).on('keyup',function(evt) {
+          if (evt.keyCode == 18) {
+                document.getElementById("bill").value = -1 * document.getElementById("bill").value;
+                document.getElementById("someButton").click();
+          }
+        });
   </script>
 </head>
 <body>
@@ -35,7 +41,11 @@ if(isset($_POST['ok'])){
                 echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
                 echo '</div>';
                 showBalance($db,$customer);
-                echo $value." TL eklendi.<br>";
+                if ($value<0){
+                        echo -1 * $value." TL silindi.<br>";
+                } else {
+                        echo $value." TL eklendi.<br>";
+                }
                 $db->close();
         } else {
                 ob_end_clean();
@@ -51,7 +61,7 @@ if(isset($_POST['ok'])){
 ?>
 <br>
     <div id="bottom">
-    <form action="" method="post" autocomplete="off">
+    <form action="" method="post" autocomplete="off" id="someformidk">
     <table id="myTable2">
     <tr>  
     <td width=90%><input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" name="bill" id="bill" value=""></td>
