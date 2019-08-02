@@ -13,8 +13,11 @@
         });
         jQuery(document).on('keyup',function(evt) {
           if (evt.keyCode == 18) {
-                document.getElementById("bill").value = -1 * document.getElementById("bill").value;
-                document.getElementById("someButton").click();
+                $kek = document.getElementById("bill").value;
+                if ($kek < 0){
+                        document.getElementById("bill").value = -1 * document.getElementById("bill").value;
+                        document.getElementById("someButton").click();
+                }
           }
         });
   </script>
