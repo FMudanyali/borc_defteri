@@ -15,7 +15,7 @@
 </head>
 <body>
 <form action="" method="post">
-<table id="myTable2" style="margin-top:300px;">
+<table id="myTable3" style="margin-top:300px;">
 <tr><td><a><div id=diva>Müşteri Sil</div></a></td></tr>
 <tr>
 <td width=90%><input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" name="customer" id="customer" value=""></td>

@@ -13,7 +13,7 @@ function showBalance($db,$customer){
     $ret = $db->query("SELECT * FROM '".$customer."' ORDER BY ID DESC");
     // Top padding so elements dont get under customer name.
     echo '<div style="width:100%;padding-top:80px;"></div>';
-    echo "<table id=myTable>";
+    echo "<table id=myTable2>";
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         //Red background if positive, otherwise green.
         if ($row['AMOUNT']<0){

@@ -65,7 +65,7 @@ if(isset($_POST['ok'])){
 <br>
     <div id="bottom">
     <form action="" method="post" autocomplete="off" id="someformidk">
-    <table id="myTable2">
+    <table id="myTable3">
     <tr>  
     <td width=90%><input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" name="bill" id="bill" value=""></td>
     <td width=10%><button type="submit" name="ok" id="someButton">Ekle</button></td>
