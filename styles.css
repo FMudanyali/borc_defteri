@@ -17,8 +17,8 @@ html::-webkit-scrollbar {
 a{
   text-decoration: none;
   color:rgb(220,150,100);
-  font-weight:300;
-  font-size:1.5em;
+  font-weight:500;
+  font-size:1.3em;
 }
 #myInput{
   background-color:rgb(55,60,65);
