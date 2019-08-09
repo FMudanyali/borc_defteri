@@ -58,13 +58,6 @@ function listPeople($db){
         }
     }
     echo "</table><script>sortTable()</script>";
-    echo '<table id="myTable">';
-    echo "<tr><td style=background-color:rgb(35,40,45);><a style=font-weight:600;>
-    <div id=diva>TOPLAM ALACAK: </div></a></td>
-    <td style=text-align:right;background-color:rgb(35,40,45);>"
-    .number_format($total_loan,2)." TL</td></tr>";
-    echo "</table>";
-    
 }
 function toplamAlacak($db){
     $total_loan = 0;
