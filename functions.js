@@ -44,11 +44,11 @@ function remove_record(id) {
 function edit_record(id) {
   var oldamount = document.getElementById(id+"amount").innerText.split(" ")[0];
   var amount = prompt(oldamount+'TL NE ILE DEGISTIRILSIN?');
+  amount = amount.replace(",",".");
   if (isNaN(amount)){
     alert(amount + " DOGRU BIR DEGER DEGIL.");
     return;
   }
-  amount.replace(",",".");
   document.getElementById("editid").value = id;
   document.getElementById("amount").value = amount;
   document.getElementById("someButton2").click();
