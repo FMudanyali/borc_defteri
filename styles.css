@@ -123,7 +123,7 @@ tr td{
   border-bottom: 1px solid rgb(149, 169, 189);
   padding-bottom: 5px;
 }
-#lmao {
+#myTable2 tr td {
   text-align: left;
   font-size: 1.1em;
 }

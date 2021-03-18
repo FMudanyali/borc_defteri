@@ -12,22 +12,21 @@
 function showBalance($db,$customer){
     $ret = $db->query("SELECT * FROM '".$customer."' ORDER BY ID DESC");
     // Top padding so elements dont get under customer name.
-    echo '<div style="width:100%;padding-top:80px;"></div>';
-    echo "<table id=myTable2>";
+    echo '<div style="width:100%;padding-top:80px;"></div>'."\n";
+    echo "<table id=myTable2>\n";
     while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
         //Red background if positive, otherwise green.
         if ($row['AMOUNT']<0){
-            echo '<tr id=lmao style="background-color:rgb(25,60,35);">'
-            .'<td id=lmao style="text-align:left;">'.$row['ID'] ."</td>"
-            .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'],2)." TL</td>";
+            echo '<tr style="background-color:rgb(25,60,35);">'."\n";
         } else {
-            echo '<tr id=lmao style="background-color:rgb(60,30,35);">'
-            .'<td id=lmao  style="text-align:left;">'.$row['ID'] ."</td>"
-            .'<td id=lmao  style="text-align:center;width:18em;">'.$row['DATE'] ."</td>"
-            .'<td id=lmao  style="text-align:right;">'.number_format($row['AMOUNT'],2)." TL</td>";
+            echo '<tr style="background-color:rgb(60,30,35);">'."\n";
         }
-        echo "</tr>";
+        echo '<td id='.$row['ID']."remove".'><a href="#" onclick="remove_record('.$row['ID'].');return false;"><img src="assets/remove.png" width=16 /></a></td>'."\n"
+        .'<td id='.$row['ID']."edit".'><a href="#" onclick="edit_record('.$row['ID'].');return false;"><img src="assets/edit.png" width=16 /></a></td>'."\n"
+        .'<td style="text-align:left;">'.$row['ID'] ."</td>\n"
+        .'<td style="text-align:center;width:18em;">'.$row['DATE'] ."</td>\n"
+        .'<td id='.$row['ID']."amount".' style="text-align:right;">'.number_format($row['AMOUNT'],2)." TL</td>\n"
+        ."</tr>";
     }
     echo "</table>";
     // Bottom padding so elements dont get under input bar.

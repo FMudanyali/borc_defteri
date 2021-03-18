@@ -1,10 +1,10 @@
 <html>
 <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="styles.css">
   <?php include("functions.php")?>
-  <script type="text/javascript" src="functions.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="functions.js"></script>
   <script>
         jQuery(document).on('keyup',function(evt) {
           if (evt.keyCode == 27) {
@@ -25,7 +25,6 @@
 <body>
 <?php
 $customer = $_GET['value'];
-ob_start();
 echo '<div id="title">';
 echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
 echo '</div>';
@@ -34,29 +33,23 @@ date_default_timezone_set('Europe/Istanbul');
 $date = date('d-m-Y H:i');
 ?>
 <?php
+if(isset($_POST['edited'])){
+        if(!empty($_POST['amount'])){
+                $db->exec("UPDATE '".$customer."' SET AMOUNT = ".$_POST['amount']." WHERE ID = ".$_POST['editid'].";");
+                echo("<meta http-equiv='refresh' content='0'>");
+        } else {
+                $db->exec("DELETE FROM '".$customer."' WHERE ID = ".$_POST['editid'].";");
+                echo("<meta http-equiv='refresh' content='0'>");
+        }
+        $db->close();
+}
 if(isset($_POST['ok'])){
         $value = str_replace(',','.', $_POST['bill']);
         if (is_numeric($value) and $value!=0){
                 $db->exec("INSERT INTO '".$customer."' (ID,DATE,AMOUNT) VALUES (NULL,'".$date."',$value)");
-                ob_end_clean();
-                ob_start();
-                echo '<div id="title">';
-                echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
-                echo '</div>';
-                showBalance($db,$customer);
-                if ($value<0){
-                        echo -1 * $value." TL silindi.<br>";
-                } else {
-                        echo $value." TL eklendi.<br>";
-                }
                 $db->close();
+                echo("<meta http-equiv='refresh' content='0'>");
         } else {
-                ob_end_clean();
-                ob_start();
-                echo '<div id="title">';
-                echo "<h1>".$customer." : ".number_format(totalBalance($db,$customer),2)." TL</h1>";
-                echo "</div>";
-                showBalance($db,$customer);
                 echo $value." kabul edilemez.<br>";
                 $db->close();
         }
@@ -72,6 +65,10 @@ if(isset($_POST['ok'])){
     </tr>
     </table>
     </form>
+    <form action="" method="post" autocomplete="off" id="otherformidk">
+            <input style="display:none;"  autocomplete="off" type="text" name="editid" id="editid" value=""></td>
+            <input style="display:none;"  autocomplete="off" type="text" name="amount" id="amount" value=""></td>
+            <button style="display:none;" type="submit" name="edited" id="someButton2"></button>
     </div>
 </body>
 </html>

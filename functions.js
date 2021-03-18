@@ -33,6 +33,27 @@ function ask() {
   return confirm(customer + ' KİŞİSİNİ SİLMEK İSTEDİĞİNDEN EMİN MİSİN?');
 }
 
+function remove_record(id) {
+  var amount = document.getElementById(id+"amount").innerText.split(" ")[0];
+  confirm(amount + 'TL KAYIDI SILMEK ISTEDIGINDEN EMIN MISIN?');
+  if (!confirm) return;
+  document.getElementById("editid").value = id;
+  document.getElementById("someButton2").click();
+}
+
+function edit_record(id) {
+  var oldamount = document.getElementById(id+"amount").innerText.split(" ")[0];
+  var amount = prompt(oldamount+'TL NE ILE DEGISTIRILSIN?');
+  if (isNaN(amount)){
+    alert(amount + " DOGRU BIR DEGER DEGIL.");
+    return;
+  }
+  amount.replace(",",".");
+  document.getElementById("editid").value = id;
+  document.getElementById("amount").value = amount;
+  document.getElementById("someButton2").click();
+}
+
 function searchNames() {
   // Declare variables 
   var input, filter, table, tr, td, i, txtValue;
