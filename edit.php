@@ -36,9 +36,11 @@ $date = date('d-m-Y H:i');
 if(isset($_POST['edited'])){
         if(!empty($_POST['amount'])){
                 $db->exec("UPDATE '".$customer."' SET AMOUNT = ".$_POST['amount']." WHERE ID = ".$_POST['editid'].";");
+                echo("<script>window.alert(\"KAYIT DUZENLENDI.\");</script>");
                 echo("<meta http-equiv='refresh' content='0'>");
         } else {
                 $db->exec("DELETE FROM '".$customer."' WHERE ID = ".$_POST['editid'].";");
+                echo("<script>window.alert(\"KAYIT SILINDI.\");</script>");
                 echo("<meta http-equiv='refresh' content='0'>");
         }
         $db->close();
@@ -48,9 +50,10 @@ if(isset($_POST['ok'])){
         if (is_numeric($value) and $value!=0){
                 $db->exec("INSERT INTO '".$customer."' (ID,DATE,AMOUNT) VALUES (NULL,'".$date."',$value)");
                 $db->close();
+                echo("<script>window.alert(\"".$value." EKLENDI.\");</script>");
                 echo("<meta http-equiv='refresh' content='0'>");
         } else {
-                echo $value." kabul edilemez.<br>";
+                echo("<script>window.alert(\"".$value." KABUL EDİLEMEZ.\");</script>");
                 $db->close();
         }
 }
